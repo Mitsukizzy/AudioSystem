@@ -1,0 +1,68 @@
+﻿  ITPEnginePCH.cpp
+  World.cpp
+  VertexArray.cpp
+  Texture.cpp
+  SpriteComponent.cpp
+  SphereComponent.cpp
+  Sound.cpp
+  Skeleton.cpp
+  SkeletalMeshComponent.cpp
+c:\users\izzy\documents\repositories\audiosystem\core\source\skeletalmeshcomponent.cpp(68): warning C4018: '<': signed/unsigned mismatch
+  SimdMath.cpp
+  Shader.cpp
+  Renderer.cpp
+  Random.cpp
+  PointLightData.cpp
+  PointLightComponent.cpp
+  Player.cpp
+  PhysWorld.cpp
+  Object.cpp
+  MoveComponent.cpp
+  MeshComponent.cpp
+  Mesh.cpp
+  Generating Code...
+  Compiling...
+  Math.cpp
+  Main.cpp
+  LevelLoader.cpp
+  KillVolume.cpp
+  InputManager.cpp
+  InputLayoutCache.cpp
+  InputComponent.cpp
+  GraphicsDriver.cpp
+  GameTimers.cpp
+  Game.cpp
+  FrameTimer.cpp
+  FontComponent.cpp
+  Font.cpp
+  DrawComponent.cpp
+  DbgAssert.cpp
+  Component.cpp
+  CollisionHelpers.cpp
+  CollisionComponent.cpp
+  CharacterMoveComponent.cpp
+  CameraComponent.cpp
+  Generating Code...
+  Compiling...
+  BoxComponent.cpp
+  BoneTransform.cpp
+  AudioComponent.cpp
+  AssetCache.cpp
+  Asset.cpp
+  Animation.cpp
+c:\users\izzy\documents\repositories\audiosystem\core\source\animation.cpp(136): warning C4018: '<': signed/unsigned mismatch
+  Actor.cpp
+  Generating Code...
+  Game.vcxproj -> C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\Debug\Game.exe
+  Game.vcxproj -> C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\Debug\Game.pdb (Full PDB)
+  C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\\..\external\SDL\lib\win\x86\libfreetype-6.dll
+  C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\\..\external\SDL\lib\win\x86\libogg-0.dll
+  C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\\..\external\SDL\lib\win\x86\libpng16-16.dll
+  C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\\..\external\SDL\lib\win\x86\libvorbis-0.dll
+  C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\\..\external\SDL\lib\win\x86\libvorbisfile-3.dll
+  C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\\..\external\SDL\lib\win\x86\SDL2.dll
+  C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\\..\external\SDL\lib\win\x86\SDL2_image.dll
+  C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\\..\external\SDL\lib\win\x86\SDL2_mixer.dll
+  C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\\..\external\SDL\lib\win\x86\SDL2_ttf.dll
+  C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\\..\external\SDL\lib\win\x86\zlib1.dll
+  10 File(s) copied
