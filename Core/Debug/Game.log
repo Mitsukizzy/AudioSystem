@@ -1,68 +1,13 @@
-﻿  ITPEnginePCH.cpp
-  World.cpp
-  VertexArray.cpp
-  Texture.cpp
-  SpriteComponent.cpp
-  SphereComponent.cpp
-  Sound.cpp
-  Skeleton.cpp
-  SkeletalMeshComponent.cpp
-c:\users\izzy\documents\repositories\audiosystem\core\source\skeletalmeshcomponent.cpp(68): warning C4018: '<': signed/unsigned mismatch
-  SimdMath.cpp
-  Shader.cpp
-  Renderer.cpp
-  Random.cpp
-  PointLightData.cpp
-  PointLightComponent.cpp
-  Player.cpp
-  PhysWorld.cpp
-  Object.cpp
-  MoveComponent.cpp
-  MeshComponent.cpp
-  Mesh.cpp
-  Generating Code...
-  Compiling...
-  Math.cpp
-  Main.cpp
-  LevelLoader.cpp
-  KillVolume.cpp
-  InputManager.cpp
-  InputLayoutCache.cpp
-  InputComponent.cpp
-  GraphicsDriver.cpp
-  GameTimers.cpp
-  Game.cpp
-  FrameTimer.cpp
-  FontComponent.cpp
-  Font.cpp
-  DrawComponent.cpp
-  DbgAssert.cpp
-  Component.cpp
-  CollisionHelpers.cpp
-  CollisionComponent.cpp
-  CharacterMoveComponent.cpp
-  CameraComponent.cpp
-  Generating Code...
-  Compiling...
-  BoxComponent.cpp
-  BoneTransform.cpp
-  AudioComponent.cpp
-  AssetCache.cpp
-  Asset.cpp
-  Animation.cpp
-c:\users\izzy\documents\repositories\audiosystem\core\source\animation.cpp(136): warning C4018: '<': signed/unsigned mismatch
-  Actor.cpp
-  Generating Code...
-  Game.vcxproj -> C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\Debug\Game.exe
-  Game.vcxproj -> C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\Debug\Game.pdb (Full PDB)
-  C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\\..\external\SDL\lib\win\x86\libfreetype-6.dll
-  C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\\..\external\SDL\lib\win\x86\libogg-0.dll
-  C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\\..\external\SDL\lib\win\x86\libpng16-16.dll
-  C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\\..\external\SDL\lib\win\x86\libvorbis-0.dll
-  C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\\..\external\SDL\lib\win\x86\libvorbisfile-3.dll
-  C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\\..\external\SDL\lib\win\x86\SDL2.dll
-  C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\\..\external\SDL\lib\win\x86\SDL2_image.dll
-  C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\\..\external\SDL\lib\win\x86\SDL2_mixer.dll
-  C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\\..\external\SDL\lib\win\x86\SDL2_ttf.dll
-  C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\\..\external\SDL\lib\win\x86\zlib1.dll
-  10 File(s) copied
+﻿Build started 11/10/2016 8:11:01 PM.
+     1>Project "C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\Game.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I..\external\FMOD\include /I..\external\SDL\include /I..\external\rapidjson\include /I..\external\DirectXTK\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR- /Yc"ITPEnginePCH.h" /Fp"Debug\Game.pch" /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Source\ITPEnginePCH.cpp
+         ITPEnginePCH.cpp
+     1>c:\users\izzy\documents\repositories\audiosystem\core\source\sound.h(22): error C2535: 'Sound::~Sound(void)': member function already defined or declared
+         c:\users\izzy\documents\repositories\audiosystem\core\source\sound.h(14): note: see declaration of 'Sound::~Sound'
+     1>c:\users\izzy\documents\repositories\audiosystem\core\source\audiocomponent.h(3): fatal error C1083: Cannot open include file: 'Channel.h': No such file or directory
+     1>Done Building Project "C:\Users\Izzy\Documents\Repositories\AudioSystem\Core\Game.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.11

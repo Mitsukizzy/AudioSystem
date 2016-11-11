@@ -1,31 +1,28 @@
 #include "ITPEnginePCH.h"
-#include <SDL/SDL.h>
-#include <SDL/SDL_mixer.h>
+#include "Sound.h"
 
-Sound::Sound(class Game& game)
-	:Asset(game)
-	,mData(nullptr)
+Sound::Sound( const char* path )
 {
-
+	// Open file stream for input as binary
+	std::ifstream file(path, std::ios::in | std::ios::binary);
+	// Read number of channels and sample rate
+	file.seekg(22);
+	file.read((char*)&numChannels, 2);
+	file.read((char*)&samplingRate, 4);
+	// Read bits per sample
+	file.seekg(34);
+	file.read((char*)&bitsPerSample, 2);
+	// Read size of data in bytes
+	U32 length;
+	file.seekg(40);
+	file.read((char*)&length, 4);
+	// Allocate array to hold all the data as PCM samples
+	count = length / 2;
+	data = new PCM16[count];
+	// Read PCM data
+	file.read((char*)data, length);
 }
 
-Sound::~Sound()
-{
-	if (mData)
-	{
-		Mix_FreeChunk(mData);
-	}
-}
-
-bool Sound::Load(const char* fileName, class AssetCache* cache)
-{
-	mData = Mix_LoadWAV(fileName);
-	
-	if (!mData)
-	{
-		SDL_Log("Failed to load sound %s", fileName);
-		return false;
-	}
-
-	return true;
+Sound::~Sound() {
+	delete[] data;
 }

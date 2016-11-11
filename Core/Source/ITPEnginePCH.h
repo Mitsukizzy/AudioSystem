@@ -60,6 +60,7 @@
 #include "Actor.h"
 
 #include "KillVolume.h"
+#include "Channel.h"
 
 #include "Player.h"
 

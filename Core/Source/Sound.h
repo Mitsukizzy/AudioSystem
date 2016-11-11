@@ -1,18 +1,19 @@
 #pragma once
 #include "Asset.h"
 
-class Sound : public Asset
+// Set some aliases for common audio formats
+typedef signed short PCM16;
+typedef unsigned int U32;
+typedef unsigned short U16;
+
+class Sound
 {
-	DECL_ASSET(Sound, Asset);
 public:
-	Sound(class Game& game);
-	virtual ~Sound();
-
-	bool Load(const char* fileName, class AssetCache* cache) override;
-
-	struct Mix_Chunk* GetData() { return mData; }
-private:
-	struct Mix_Chunk* mData;
+	Sound(const char* path);
+	~Sound();
+	U32 samplingRate;
+	U16 numChannels;
+	U16 bitsPerSample;
+	PCM16* data;
+	U32 count;
 };
-
-DECL_PTR(Sound);

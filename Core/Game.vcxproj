@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Channel.h" />
     <ClInclude Include="Source\Actor.h" />
     <ClInclude Include="Source\Animation.h" />
     <ClInclude Include="Source\Asset.h" />
@@ -65,6 +66,7 @@
     <ClInclude Include="Source\World.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Channel.cpp" />
     <ClCompile Include="Source\Actor.cpp" />
     <ClCompile Include="Source\Animation.cpp" />
     <ClCompile Include="Source\Asset.cpp" />
