@@ -1,7 +1,5 @@
 #include "ITPEnginePCH.h"
 
-IMPL_ACTOR(Channel, Actor);
-
 void Channel::Play( Sound* soundToPlay )
 {
 	sound = soundToPlay;

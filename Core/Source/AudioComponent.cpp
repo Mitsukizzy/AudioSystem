@@ -1,7 +1,4 @@
 #include "ITPEnginePCH.h"
-#include <SDL/SDL_mixer.h>
-#include <iostream>
-#include <fstream>
 
 IMPL_COMPONENT(AudioComponent, Component, 100);
 
@@ -43,9 +40,6 @@ FMOD_RESULT AudioComponent::PlayAudioData()
 
 FMOD_RESULT F_CALLBACK AudioComponent::WriteSoundData( FMOD_SOUND * sound, void * data, unsigned int length )
 {
-	// Cast data pointer to the appropriate format (in this case PCM16)
-	PCM16* pcmData = (PCM16*)data;
-
 	// Cast to PCM and calculate sample count
 	PCM16* pcmData = ( PCM16* ) data;
 	// Number of samples that can fit in array when each sample is 2 bytes

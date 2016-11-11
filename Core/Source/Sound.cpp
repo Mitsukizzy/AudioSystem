@@ -1,5 +1,6 @@
 #include "ITPEnginePCH.h"
-#include "Sound.h"
+#include <iostream>
+#include <fstream>
 
 Sound::Sound( const char* path )
 {

@@ -170,7 +170,7 @@
     <ClInclude Include="Source\KillVolume.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Channel.h">
+    <ClInclude Include="Source\Channel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -319,7 +319,7 @@
     <ClCompile Include="Source\KillVolume.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Channel.cpp">
+    <ClCompile Include="Source\Channel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

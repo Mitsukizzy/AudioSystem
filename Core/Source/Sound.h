@@ -1,5 +1,4 @@
 #pragma once
-#include "Asset.h"
 
 // Set some aliases for common audio formats
 typedef signed short PCM16;

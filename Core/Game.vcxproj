@@ -11,7 +11,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Channel.h" />
     <ClInclude Include="Source\Actor.h" />
     <ClInclude Include="Source\Animation.h" />
     <ClInclude Include="Source\Asset.h" />
@@ -20,6 +19,7 @@
     <ClInclude Include="Source\BoneTransform.h" />
     <ClInclude Include="Source\BoxComponent.h" />
     <ClInclude Include="Source\CameraComponent.h" />
+    <ClInclude Include="Source\Channel.h" />
     <ClInclude Include="Source\CharacterMoveComponent.h" />
     <ClInclude Include="Source\CollisionComponent.h" />
     <ClInclude Include="Source\CollisionHelpers.h" />
@@ -66,7 +66,6 @@
     <ClInclude Include="Source\World.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Channel.cpp" />
     <ClCompile Include="Source\Actor.cpp" />
     <ClCompile Include="Source\Animation.cpp" />
     <ClCompile Include="Source\Asset.cpp" />
@@ -75,6 +74,7 @@
     <ClCompile Include="Source\BoneTransform.cpp" />
     <ClCompile Include="Source\BoxComponent.cpp" />
     <ClCompile Include="Source\CameraComponent.cpp" />
+    <ClCompile Include="Source\Channel.cpp" />
     <ClCompile Include="Source\CharacterMoveComponent.cpp" />
     <ClCompile Include="Source\CollisionComponent.cpp" />
     <ClCompile Include="Source\CollisionHelpers.cpp" />
