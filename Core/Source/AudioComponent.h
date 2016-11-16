@@ -18,4 +18,5 @@ private:
 	// Stereo: count = 44100 Hz * 1 second * 2 channels
 	PCM16 stereoData[88200];
 	Channel mainChannel;
+	FMOD::System* system;
 };

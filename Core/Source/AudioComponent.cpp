@@ -5,9 +5,23 @@ IMPL_COMPONENT(AudioComponent, Component, 100);
 AudioComponent::AudioComponent(Actor& owner)
 	:Component(owner)
 {
+	FMOD::System_Create(&system);
+
 	PlayAudioData();
 	Sound* skiesOpen = new Sound( "Assets/Sounds/Skyshot_SkiesOpen.wav" );
 	mainChannel.Play( skiesOpen );
+}
+
+FMOD_RESULT F_CALLBACK AudioComponent::WriteSoundData( FMOD_SOUND * sound, void * data, unsigned int length )
+{
+	// Cast to PCM and calculate sample count
+	PCM16* pcmData = ( PCM16* ) data;
+	// Number of samples that can fit in array when each sample is 2 bytes
+	int pcmDataCount = length / 2;
+
+	mainChannel.WriteSoundData( pcmData, pcmDataCount );
+
+	return FMOD_OK;
 }
 
 FMOD_RESULT AudioComponent::PlayAudioData()
@@ -30,22 +44,10 @@ FMOD_RESULT AudioComponent::PlayAudioData()
 	info.pcmreadcallback = WriteSoundData;
 
 	// Create a looping stream with FMOD_OPENUSER and the info we filled
-	//FMOD::Sound* sound;
-	//FMOD_MODE mode = FMOD_LOOP_NORMAL | FMOD_OPENUSER;
-	//system->createStream(0, mode, &info, &sound);
-	//system->playSound(FMOD_CHANNEL_FREE, sound, false, 0);
-
-	return FMOD_OK;
-}
-
-FMOD_RESULT F_CALLBACK AudioComponent::WriteSoundData( FMOD_SOUND * sound, void * data, unsigned int length )
-{
-	// Cast to PCM and calculate sample count
-	PCM16* pcmData = ( PCM16* ) data;
-	// Number of samples that can fit in array when each sample is 2 bytes
-	int pcmDataCount = length / 2;
-
-	mainChannel.WriteSoundData( pcmData, pcmDataCount );
+	FMOD::Sound* sound;
+	FMOD_MODE mode = FMOD_LOOP_NORMAL | FMOD_OPENUSER;
+	system->createStream( 0, mode, &info, &sound );
+	system->playSound( sound, NULL, false, 0 ); // 2nd param: Channel group defaults to FMOD_CHANNEL_FREE
 
 	return FMOD_OK;
 }
