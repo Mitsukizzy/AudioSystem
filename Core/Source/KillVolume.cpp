@@ -1,4 +1,5 @@
 #include "ITPEnginePCH.h"
+#include "AudioSystem.h"
 
 IMPL_ACTOR(KillVolume, Actor);
 
@@ -18,5 +19,7 @@ void KillVolume::BeginTouch(Actor& other)
 	{
 		auto& player = Cast<Player>(other);
 		player.OnRespawn();
+		AudioSystem *as = new AudioSystem();
+		as->PlayAudioData( "Assets/Sounds/Skyshot_SkiesOpen.wav" );
 	}
 }

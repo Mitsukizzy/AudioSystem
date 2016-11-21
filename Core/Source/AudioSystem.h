@@ -8,11 +8,13 @@ class AudioSystem
 {
 public:
 	AudioSystem();
-	FMOD_RESULT PlayAudioData();
+	~AudioSystem();
+	FMOD_RESULT PlayAudioData( const char* path );
+
+private:
 	static FMOD_RESULT F_CALLBACK WriteSoundDataCB( FMOD_SOUND *sound, void *data, unsigned int datalen );
 	FMOD_RESULT WriteSoundData( FMOD_SOUND *sound, void *data, unsigned int datalen );
 
-private:
 	// Mono: count = sampling rate * duration * channels
 	PCM16 data[SAMPLE_RATE];
 

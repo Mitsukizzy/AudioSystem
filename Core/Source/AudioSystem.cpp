@@ -3,13 +3,9 @@
 AudioSystem::AudioSystem()
 {
 	FMOD::System_Create(&system);
-
-	PlayAudioData();
-	Sound* skiesOpen = new Sound( "Assets/Sounds/Skyshot_SkiesOpen.wav" );
-	mainChannel.Play( skiesOpen );
 }
 
-FMOD_RESULT AudioSystem::PlayAudioData()
+FMOD_RESULT AudioSystem::PlayAudioData( const char* path )
 {
 	// Create and init sound info structure
 	FMOD_CREATESOUNDEXINFO info;
@@ -26,11 +22,15 @@ FMOD_RESULT AudioSystem::PlayAudioData()
 	info.decodebuffersize = SAMPLE_RATE * 0.1;	// Number of samples submitted every 100ms
 	info.pcmreadcallback = &AudioSystem::WriteSoundDataCB; //FMOD_SOUND_PCMREAD_CALLBACK
 
-															  // Create a looping stream with FMOD_OPENUSER and the info we filled
+	// Create a looping stream with FMOD_OPENUSER and the info we filled
 	FMOD::Sound* sound;
 	FMOD_MODE mode = FMOD_LOOP_NORMAL | FMOD_OPENUSER;
 	system->createStream( 0, mode, &info, &sound );
 	//system->playSound( sound, NULL, false, 0 ); // 2nd param: Channel group defaults to FMOD_CHANNEL_FREE
+
+
+	Sound* skiesOpen = new Sound( path );
+	mainChannel.Play( skiesOpen );
 
 	return FMOD_OK;
 }
