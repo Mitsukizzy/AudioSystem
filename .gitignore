@@ -31,5 +31,5 @@
 *idb
 *pdb
 
-Core/ipch/*
-Core/Debug/*
+/Core/ipch/
+/Core/Debug/
