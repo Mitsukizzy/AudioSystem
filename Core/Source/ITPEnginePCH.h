@@ -42,7 +42,6 @@
 
 // Components
 #include "Component.h"
-#include "AudioComponent.h"
 #include "CameraComponent.h"
 #include "CharacterMoveComponent.h"
 #include "CollisionComponent.h"
@@ -60,6 +59,7 @@
 #include "Actor.h"
 
 #include "KillVolume.h"
+#include "AudioSystem.h"
 #include "Channel.h"
 
 #include "Player.h"

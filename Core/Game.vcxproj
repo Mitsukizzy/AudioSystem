@@ -15,7 +15,7 @@
     <ClInclude Include="Source\Animation.h" />
     <ClInclude Include="Source\Asset.h" />
     <ClInclude Include="Source\AssetCache.h" />
-    <ClInclude Include="Source\AudioComponent.h" />
+    <ClInclude Include="Source\AudioSystem.h" />
     <ClInclude Include="Source\BoneTransform.h" />
     <ClInclude Include="Source\BoxComponent.h" />
     <ClInclude Include="Source\CameraComponent.h" />
@@ -70,7 +70,7 @@
     <ClCompile Include="Source\Animation.cpp" />
     <ClCompile Include="Source\Asset.cpp" />
     <ClCompile Include="Source\AssetCache.cpp" />
-    <ClCompile Include="Source\AudioComponent.cpp" />
+    <ClCompile Include="Source\AudioSystem.cpp" />
     <ClCompile Include="Source\BoneTransform.cpp" />
     <ClCompile Include="Source\BoxComponent.cpp" />
     <ClCompile Include="Source\CameraComponent.cpp" />
@@ -198,12 +198,12 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\external\FMOD\lib;..\external\SDL\lib\win\x86;..\external\DirectXTK\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_mixer.lib;d3d11.lib;d3dcompiler.lib;dxguid.lib;winmm.lib;comctl32.lib;DirectXTK.lib;fmodex_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_mixer.lib;d3d11.lib;d3dcompiler.lib;dxguid.lib;winmm.lib;comctl32.lib;DirectXTK.lib;fmod_vc.lib;fmod64_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/NODEFAULTLIB:msvcrt.lib %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Command>xcopy "$(ProjectDir)\..\external\SDL\lib\win\x86\*.dll" "$(OutDir)" /i /s /y
-xcopy /y "$(ProjectDir)\..\external\FMOD\fmodex.dll" "$(OutDir)"</Command>
+xcopy /y "$(ProjectDir)\..\external\FMOD\lib\fmod.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -226,11 +226,11 @@ xcopy /y "$(ProjectDir)\..\external\FMOD\fmodex.dll" "$(OutDir)"</Command>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>..\external\FMOD\lib;..\external\SDL\lib\win\x86;..\external\DirectXTK\lib\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_mixer.lib;d3d11.lib;d3dcompiler.lib;dxguid.lib;winmm.lib;comctl32.lib;DirectXTK.lib;fmodex_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_mixer.lib;d3d11.lib;d3dcompiler.lib;dxguid.lib;winmm.lib;comctl32.lib;DirectXTK.lib;fmod_vc.lib;fmod64_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>xcopy "$(ProjectDir)\..\external\SDL\lib\win\x86\*.dll" "$(OutDir)" /i /s /y
-xcopy /y "$(ProjectDir)\..\external\FMOD\fmodex.dll" "$(OutDir)"</Command>
+xcopy /y "$(ProjectDir)\..\external\FMOD\lib\fmod.dll" "$(OutDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
