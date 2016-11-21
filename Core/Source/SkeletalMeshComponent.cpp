@@ -65,7 +65,7 @@ void SkeletalMeshComponent::ComputeMatrixPalette()
 	std::vector<Matrix4> outPoses(mSkeleton->GetNumBones());
 	mAnimation->GetGlobalPoseAtTime( outPoses, mSkeleton, mAnimationTime );
 
-	for ( int b = 0; b < mSkeleton->GetNumBones(); b++ )
+	for ( size_t b = 0; b < mSkeleton->GetNumBones(); b++ )
 	{
 		mPalette.bones[b] = bindPoses[b] * outPoses[b];
 	}

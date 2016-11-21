@@ -133,7 +133,7 @@ void Animation::GetGlobalPoseAtTime(std::vector<Matrix4>& outPoses, SkeletonPtr 
 	int B = A + 1;			// closest frame after
 	float f = frame - A;			// percentage between A and B
 
-	for ( int b = 0; b < mNumBones; b++ )
+	for ( size_t b = 0; b < mNumBones; b++ )
 	{
 		int parentIdx = inSkeleton->GetBone( b ).mParent;
 		if ( parentIdx >= 0 )

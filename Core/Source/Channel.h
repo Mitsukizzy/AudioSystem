@@ -12,5 +12,5 @@ public:
 
 private:
 	Sound* sound;
-	int position;
+	uint16_t position;
 };
