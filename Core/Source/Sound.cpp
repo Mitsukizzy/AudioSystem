@@ -13,7 +13,7 @@ Sound::Sound( const char* path )
 	}
 	DbgAssert( !file.fail(), "Path to Audio file is not valid" );
 
-	// Read number of channels and sample rate
+	// Read number of channels and sampling rate at offset 22 and 24 respectively
 	file.seekg( 22 );
 	file.read( ( char* ) &numChannels, 2 );
 	file.read( ( char* ) &samplingRate, 4 );
