@@ -17,8 +17,10 @@ AudioSystem::AudioSystem()
 FMOD_RESULT AudioSystem::PlayAudioData( const char* path )
 {
 	Sound* sound1 = new Sound( path );
+	mainChannel.Play( sound1 );	
 
 	// Create and init sound info structure
+	// Sets the WriteSoundData callback which uses the function defined in Channel
 	FMOD_CREATESOUNDEXINFO info;
 	memset( &info, 0, sizeof( FMOD_CREATESOUNDEXINFO ) );
 	info.cbsize = sizeof( FMOD_CREATESOUNDEXINFO );
@@ -27,7 +29,7 @@ FMOD_RESULT AudioSystem::PlayAudioData( const char* path )
 	info.defaultfrequency = SAMPLE_RATE;
 	info.format = FMOD_SOUND_FORMAT_PCM16;
 	info.numchannels = 2;
-	info.length = sound1->length;
+	info.length = sound1->length;	// length of the sound file
 	info.decodebuffersize = 4410;	// Number of samples submitted every 100ms, Sample Rate (44100) * 0.1
 	info.pcmreadcallback = &AudioSystem::WriteSoundDataCB; //FMOD_SOUND_PCMREAD_CALLBACK
 	info.pcmsetposcallback = &AudioSystem::PCMSetPosCB;
@@ -37,11 +39,9 @@ FMOD_RESULT AudioSystem::PlayAudioData( const char* path )
 	FMOD_MODE mode = FMOD_LOOP_NORMAL | FMOD_OPENMEMORY;
 	FMOD_RESULT result;
 
-	system->createStream( path, FMOD_DEFAULT, &info, &sound ); 
+	system->createStream( 0, FMOD_DEFAULT, &info, &sound ); 
 	system->createSound( path, FMOD_DEFAULT, 0, &sound ); 
 	system->playSound( sound, nullptr, false, 0 ); // 2nd param: Channel group defaults to FMOD_CHANNEL_FREE
-
-	mainChannel.Play( sound1 );	
 
 	return FMOD_OK;
 }
