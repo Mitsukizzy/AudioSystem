@@ -8,7 +8,7 @@ public:
 	Channel() : sound( 0 ), position( 0 ) {}
 	void Play( Sound* soundToPlay );
 	void Stop();
-	void WriteSoundData( PCM16* data, int cout );
+	void WriteSoundData( PCM16* data, int count );
 
 private:
 	Sound* sound;

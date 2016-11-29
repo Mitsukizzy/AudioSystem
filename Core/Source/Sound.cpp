@@ -5,7 +5,8 @@
 Sound::Sound( const char* path )
 {
 	// Open stream for binary input file
-	std::ifstream file( path, std::ios::in | std::ios::binary ); 
+	std::ifstream file;
+	file.open( path, std::ios::in | std::ios::binary );
 
 	if ( !file )
 	{
@@ -18,11 +19,11 @@ Sound::Sound( const char* path )
 	file.read( ( char* ) &numChannels, 2 );
 	file.read( ( char* ) &samplingRate, 4 );
 
-	// Read bits per sample
+	// Read bits per sample at offset 34
 	file.seekg( 34 );
 	file.read( ( char* ) &bitsPerSample, 2 );
 
-	// Read size of data in bytes
+	// Read data chunk size at offset 40
 	U32 length;
 	file.seekg( 40 );
 	file.read( ( char* ) &length, 4 );
@@ -31,7 +32,7 @@ Sound::Sound( const char* path )
 	count = length / 2;
 	data = new PCM16[count];
 
-	// Read PCM data into data
+	// All data after past offset 44 is audio data, read into data variable
 	file.read( ( char* ) data, length );
 }
 
