@@ -20,6 +20,6 @@ void KillVolume::BeginTouch(Actor& other)
 		auto& player = Cast<Player>(other);
 		player.OnRespawn();
 		AudioSystem *as = new AudioSystem();
-		as->PlayAudioData( "Assets/Sounds/AsteroidDie.wav" );
+		as->PlayAudioData( "Assets/Sounds/Death.wav" );
 	}
 }

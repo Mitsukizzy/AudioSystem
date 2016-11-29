@@ -10,7 +10,19 @@ public:
 	void Stop();
 	void WriteSoundData( PCM16* data, int count );
 
+	void SetPaused( bool isPaused ) { paused = isPaused; }
+	bool GetPaused() const { return paused; }
+
+	void SetLooping( bool isLooping ) { loop = isLooping; }
+	bool GetLooping() const { return loop; }
+
+	void SetVolume( float newVolume );
+	float GetVolume() const { return volume; }
+
 private:
 	Sound* sound;
 	uint16_t position;
+	float volume;
+	bool paused;
+	bool loop;
 };

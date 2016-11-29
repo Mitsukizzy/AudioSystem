@@ -24,7 +24,6 @@ Sound::Sound( const char* path )
 	file.read( ( char* ) &bitsPerSample, 2 );
 
 	// Read data chunk size at offset 40
-	U32 length;
 	file.seekg( 40 );
 	file.read( ( char* ) &length, 4 );
 

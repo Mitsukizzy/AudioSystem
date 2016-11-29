@@ -41,7 +41,7 @@ Renderer::~Renderer()
 bool Renderer::Init(int width, int height)
 {
 	// Create our SDL window
-	mWindow = SDL_CreateWindow("ITP Engine 2 Demo! Featuring: Low Level Audio System!", 100, 100, width, height, 
+	mWindow = SDL_CreateWindow("ITP Engine 2 with Custom Feature: Low Level Audio System", 100, 100, width, height, 
 		0);
 
 	if (!mWindow)

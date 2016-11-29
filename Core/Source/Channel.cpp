@@ -11,9 +11,16 @@ void Channel::Stop()
 	sound = 0;
 }
 
+void Channel::SetVolume( float newVolume )
+{
+	// 0 = silence, 1 = full volume
+	volume = max( newVolume, 0.0f );
+	volume = min( newVolume, 1.0f );
+}
+
 void Channel::WriteSoundData( PCM16* data, int count )
 {
-	if ( sound == 0 )
+	if ( sound == 0 || paused )
 		return;
 
 	// Write samples to array
@@ -22,11 +29,20 @@ void Channel::WriteSoundData( PCM16* data, int count )
 	{
 		if ( position >= sound->count )
 		{
-			Stop();
-			return;
+			if ( loop )
+			{
+				// Instead of stopping, set position back to beginning
+				position = 0;
+			}
+			else
+			{
+				Stop();
+				return;
+			}
 		}
 
-		PCM16 curVal = sound->data[position];
+		// Multiply value of audio data by volume before writing to output
+		PCM16 curVal = ( PCM16 ) sound->data[position] * volume;
 
 		// Channels for both left and right
 		data[i] = curVal;

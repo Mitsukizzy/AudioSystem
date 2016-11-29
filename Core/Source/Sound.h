@@ -14,5 +14,6 @@ public:
 	U16 numChannels;
 	U16 bitsPerSample;
 	PCM16* data;
+	U32 length;
 	U32 count;
 };
